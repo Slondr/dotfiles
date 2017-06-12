@@ -1,5 +1,3 @@
-#Readme
-
 A collection of my dotfiles.
 
 Proper locations:
