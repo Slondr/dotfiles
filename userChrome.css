@@ -1,0 +1,135 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/* Full Width Tabs */
+
+.tabbrowser-tab
+{
+  text-align: center;
+}
+
+.tabbrowser-tab[fadein]:not([pinned])
+{
+    max-width: none !important;
+    overflow: hidden;
+}
+
+/* End Full Width Tabs */
+
+/* Begin Hide Tab Bar */
+
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+	min-height: 0 !important;
+}
+
+#tabbrowser-tabs tab[first-tab="true"][last-tab="true"] {
+	visibility: collapse;
+}
+
+/* Hide New Tab Button */
+#tabbrowser-tabs .tabs-newtab-button { 
+	visibility: collapse !important;
+}
+
+#tabbrowser-tabs tab {
+	min-height: var(--tab-min-height)
+}
+
+/* End Hide Tab Bar */
+
+
+/* Animated Modal Dialogs */
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes scale-in {
+	0% {
+		transform: scaleY(0);
+	}
+	100% {
+		transform: scaleY(1);
+	}
+}
+
+tabmodalprompt {
+	animation: 0.2s fade-in;
+	background-color: transparent !important;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), transparent 30%, transparent) !important;
+}
+
+tabmodalprompt > spacer[flex="1"] {
+	display: none;
+}
+
+tabmodalprompt .mainContainer {
+	animation: 0.2s scale-in;
+	border: 1px solid var(--toolbox-border-bottom-color) !important;
+	border-top-width: 0 !important;
+	border-radius: 0 0 var(--toolbarbutton-border-radius) var(--toolbarbutton-border-radius) !important;
+	font-size: 14px;
+	background-color: var(--toolbar-bgcolor) !important;
+	max-width: 600px;
+	transform-origin: top center;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12);
+	position: relative !important;
+}
+
+tabmodalprompt .mainContainer * {
+	color: var(--lwt-text-color);
+}
+
+tabmodalprompt .mainContainer .topContainer textbox {
+	-moz-appearance: none !important;
+	margin: 12px 0 0 0 !important;
+	border: 1px solid var(--toolbox-border-bottom-color);
+	border-radius: var(--toolbarbutton-border-radius);
+	padding: 4px !important;
+	background-color: var(--url-and-searchbar-background-color) !important;
+}
+
+tabmodalprompt .mainContainer .topContainer textbox[focused="true"] {
+	border-color: #0A84FF;
+}
+
+tabmodalprompt .mainContainer .topContainer checkbox {
+	margin: 12px 0 0 0 !important;
+	opacity: 0.7 !important;
+}
+
+tabmodalprompt .mainContainer .buttonContainer {
+	background-color: transparent !important;
+}
+
+tabmodalprompt .mainContainer .buttonContainer button {
+	-moz-appearance: none !important;
+	border: 1px solid var(--toolbox-border-bottom-color);
+	border-radius: var(--toolbarbutton-border-radius);
+	padding: 2px 3px;
+}
+
+tabmodalprompt .mainContainer .buttonContainer button:hover, tabmodalprompt .mainContainer .buttonContainer button:focus {
+	background-color: var(--toolbarbutton-hover-background);
+}
+
+tabmodalprompt .mainContainer .buttonContainer button:active {
+	background-color: var(--toolbarbutton-active-background);
+}
+
+tabmodalprompt .mainContainer .buttonContainer button[default="true"], tabmodalprompt .mainContainer .buttonContainer button[label="OK"] {
+	background-color: #0A84FF;
+	border-color: #0060DF;
+	font-size: 0.9em;
+	color: #fff !important;
+}
+
+tabmodalprompt .mainContainer .buttonContainer button[default="true"]:hover, tabmodalprompt .mainContainer .buttonContainer button[default="true"]:focus, tabmodalprompt .mainContainer .buttonContainer button[label="OK"]:hover, tabmodalprompt .mainContainer .buttonContainer button[label="OK"]:focus {
+	background-color: #0060DF;
+}
+
+/* End Animated Modal Dialogs */
