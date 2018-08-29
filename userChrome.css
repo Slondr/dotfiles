@@ -21,7 +21,7 @@
 	min-height: 0 !important;
 }
 
-#tabbrowser-tabs tab[first-tab="true"][last-tab="true"] {
+#tabbrowser-tabs tab[first-visible-tab="true"][last-visible-tab="true"] {
 	visibility: collapse;
 }
 
