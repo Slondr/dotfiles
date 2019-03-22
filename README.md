@@ -1,3 +1,6 @@
+# Note: Like all of my other projects, this has moved to Gitlab at gitlab.com/slondr.
+---
+
 A collection of my dotfiles.
 
 Proper locations:
